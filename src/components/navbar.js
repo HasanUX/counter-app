@@ -5,7 +5,7 @@ import React from 'react';
 const Navbar = ({count})  => {
     return (
         <nav className="navbar navbar-light bg-light mb-4">
-            <a href="#" className="navbar-brand">Machbazaar CMS`
+            <a href="#" className="navbar-brand">Machbazaar CMS
             </a>
 
             <p>Counter-app</p>
