@@ -60,8 +60,6 @@ componentDidMount(){
   
 }
 
-
-
 // increment/increase qty method 
 incrementHandler = c => {
     const counter = [...this.state.counter];
@@ -70,6 +68,18 @@ incrementHandler = c => {
     counter[index].capacity++;
     this.setState({ counter });
 };
+
+
+
+// decrement/decrease qty method 
+decrementHandler = c => {
+  const counter = [...this.state.counter];
+  const index = counter.indexOf(c);
+  counter[index] = { ...c };
+  counter[index].capacity--;
+  this.setState({ counter });
+};
+
 
 // delete/increment item method 
 deleteHandler = (cardID) => {
@@ -109,6 +119,7 @@ getCounterLength = () => {
             tables={this.state.tables}
             cards={this.state.cards}
             onIncrement={this.incrementHandler}
+            onDecrement={this.decrementHandler}
             onDelete={this.deleteHandler}
             onReset={this.resetHandler} />
         </main>

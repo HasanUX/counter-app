@@ -35,7 +35,7 @@ class Header extends React.Component {
                         </button>  
                     </div> */}
                     
-                    <div className="col-12 mt-5 d-flex justify-content-start align-items-center">
+                    <div className="col-12 d-flex justify-content-start align-items-center">
                         <h3 className="mr-4">Types</h3>
 
                         {this.categoryMap()}

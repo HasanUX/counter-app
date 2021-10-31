@@ -44,6 +44,7 @@ class Counters extends React.Component {
                             <Counter key={counter.id}
                             counter={counter}
                             onIncrement={this.props.onIncrement}
+                            onDecrement={this.props.onDecrement}
                             onDelete={this.props.onDelete}
                             onReset={this.props.onReset}
                             /> )}
