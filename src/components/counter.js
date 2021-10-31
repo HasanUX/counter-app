@@ -13,7 +13,8 @@ const Counter = ({counter, onIncrement, onDecrement })  => {
             </button> 
 
             <button className="btn btn-sm btn-warning" 
-                onClick={() => onDecrement(counter)}>
+                onClick={() => onDecrement(counter)}
+                disabled={counter.capacity === 0 ? "disabled" : ""}>   
                 <i className="fa fa-minus"></i>
             </button> 
 

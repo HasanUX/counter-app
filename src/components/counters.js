@@ -24,7 +24,7 @@ class Counters extends React.Component {
     render() {
 
         // simplifying references using obj destructuring
-        const {headers, counter, cards, tables, onIncrement, onDelete, onReset} = this.props;
+        const {headers, counter, cards, tables, onIncrement, onDecrement, onDelete, onReset} = this.props;
 
         return (
             
@@ -43,16 +43,16 @@ class Counters extends React.Component {
                             {counter.map(counter => 
                             <Counter key={counter.id}
                             counter={counter}
-                            onIncrement={this.props.onIncrement}
-                            onDecrement={this.props.onDecrement}
-                            onDelete={this.props.onDelete}
-                            onReset={this.props.onReset}
+                            onIncrement={onIncrement}
+                            onDecrement={onDecrement}
+                            onDelete={onDelete}
+                            onReset={onReset}
                             /> )}
                          
                         
                             <div className="reset-div">
                                 <button className="btn btn-sm btn-dark" 
-                                    onClick= {this.props.onReset}> 
+                                    onClick= {onReset}> 
                                     <i className="fa fa-undo"></i> Reset capacity
                                 </button>
                             </div>
@@ -60,18 +60,18 @@ class Counters extends React.Component {
 
                         <div className="card-div">
                            
-                            {this.props.cards.map(card => 
+                            {cards.map(card => 
                             <Card key={card.id} 
                             card={card}
-                            onDelete={this.props.onDelete}/>) //prop inserted, declated in cards.js
+                            onDelete={onDelete}/>) //prop inserted, declated in cards.js
                             }
                         </div>
 
                         <div className="table-div">
-                            {this.props.tables.map(table => 
+                            {tables.map(table => 
                             <Tables key={table.id} 
                             tables={table}
-                            onDelete={this.props.onDelete}/>)}
+                            onDelete={onDelete}/>)}
                         </div> 
                 </div>                
 

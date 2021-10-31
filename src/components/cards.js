@@ -34,7 +34,7 @@ export class Card extends React.Component {
                     
                     <div className="card-body">
                         <h5 className="card-title mb-4">{this.props.card.name}</h5>
-
+                        
                         <div className="d-flex">
                             <button  className="btn btn-sm btn-primary mr-2">
                             <i className="fa fa-table mr-2"></i> Add to table
@@ -43,6 +43,7 @@ export class Card extends React.Component {
                             <button onClick = {() => this.props.onDelete(this.props.card.id)}  className="btn btn-sm btn-danger">
                             <i className="fa fa-backward"></i> Pass it
                             </button>
+                            
                         </div>
                     </div>
                 </div>

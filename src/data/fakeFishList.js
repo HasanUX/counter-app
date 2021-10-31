@@ -9,7 +9,8 @@ const fishes = [
         category:  { fishID: "5b21ca3eeb7f6fbccd471820", name: "Sea" },
         quantity: 0,
         price: 500,
-        netWeight: 4
+        netWeight: 4,
+        liked: true
     },
 
     {
@@ -18,7 +19,8 @@ const fishes = [
         category:  { fishID: "5b21ca3eeb7f6fbccd471822", name: "Deshi" },
         quantity: 0,
         price: 1000,
-        netWeight: 3
+        netWeight: 3,
+        liked: true
     },
 
     {

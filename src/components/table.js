@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Like from './common/like';
 import { getFishes } from "../data/fakeFishList";
 
 
@@ -25,6 +26,15 @@ class Tables extends React.Component {
         // if (this.setState({cartCount: this.state.cartCount - 1})) return 0;
         
     };
+
+    //clicked handler / toggle like button handler
+    handleLike = fish => {
+        const fishes = [...this.state.fishes];
+        const index = fishes.indexOf(fish);
+        fishes[index] = {...fishes[index]};
+        fishes[index].liked = !fishes[index].liked;
+        this.setState({ fishes });
+    }
 
     render(){ 
 
@@ -58,6 +68,7 @@ class Tables extends React.Component {
                                     <th>Unit Price</th>
                                     <th>Sub</th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
 
@@ -69,6 +80,7 @@ class Tables extends React.Component {
                                     <td>{fish.netWeight}</td>
                                     <td>{fish.price}</td>
                                     <td>{fish.netWeight * fish.price}</td>
+                                    <td> <Like onClick={()=> this.handleLike(fish)} liked={fish.liked}/> </td>
                                     {/* <td>{<button onClick={() => this.incrementHandler(fish)} className="btn btn-sm btn-warning">+</button>}</td> */}
                                     <td>{<button onClick={() => this.deleteItem(fish)} className="btn btn-sm btn-danger"> <i className="fa fa-trash"></i></button>}</td>
                                 </tr>
